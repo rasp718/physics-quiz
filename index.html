@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Imaging Physics Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Medical Imaging Physics</h1>
+        
+        <div id="setup-container">
+            <p>Load a custom Quiz JSON file (optional):</p>
+            <input type="file" id="file-input" accept=".json">
+            <button id="start-btn">Start Random 10-Question Quiz</button>
+        </div>
+
+        <div id="quiz-container" class="hidden">
+            <div id="progress">Question <span id="current-q">1</span> of 10</div>
+            <h2 id="question-text">Question goes here</h2>
+            <div id="options-container"></div>
+            <button id="next-btn" class="hidden">Next Question</button>
+        </div>
+
+        <div id="result-container" class="hidden">
+            <h2>Quiz Complete!</h2>
+            <p>Your score: <span id="score">0</span> / 10</p>
+            <button id="restart-btn">Take Another Quiz</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
