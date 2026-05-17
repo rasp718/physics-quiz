@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Scientia</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- SPLASH SCREEN -->
+    <div id="splash-screen">
+        <div class="logo-container">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+            <h1>Scientia</h1>
+        </div>
+    </div>
+
+    <div class="app-wrapper">
+        <header class="app-header">
+            <div class="brand">
+                <svg class="header-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                <h1 id="main-title">Scientia</h1>
+            </div>
+            <button id="theme-toggle" aria-label="Toggle Theme">☀️</button>
+        </header>
+
+        <!-- Setup Screen -->
+        <main id="setup-container" class="view-screen">
+            <div class="spacer"></div>
+            <h2 id="subject-title">Select a Subject</h2>
+            <p class="subtitle" id="subject-subtitle">Tap below to load your question bank.</p>
+            
+            <div class="upload-section">
+                <label for="file-input" class="upload-btn 3d-btn" id="upload-label">
+                    <span class="icon">📁</span> Choose JSON File
+                </label>
+                <input type="file" id="file-input" accept=".json" class="hidden-input">
+            </div>
+            
+            <div class="spacer"></div>
+            <button id="start-btn" class="primary-btn 3d-btn bottom-anchored hidden">Start Quiz</button>
+        </main>
+
+        <!-- Quiz Screen -->
+        <main id="quiz-container" class="view-screen hidden">
+            <!-- Progress stays pinned at the top -->
+            <div class="progress-section">
+                <div class="progress-bar-bg"><div id="progress-bar"></div></div>
+                <div class="stats-row">
+                    <span id="progress-text">1 of 10</span>
+                    <span id="streak-display" class="hidden"><span id="fire-icon">🔥</span> <span id="streak-count">0</span></span>
+                </div>
+            </div>
+            
+            <!-- This wrapper swipes left/right -->
+            <div id="quiz-anim-wrapper">
+                <h2 id="question-text" class="question-text">Loading...</h2>
+                <div id="options-container" class="options-grid"></div>
+
+                <div id="explanation-container" class="explanation-box hidden">
+                    <div class="explainer-header">Explanation</div>
+                    <p id="explanation-text"></p>
+                    <img id="explanation-image" src="" alt="Diagram" class="hidden">
+                </div>
+            </div>
+
+            <button id="next-btn" class="primary-btn 3d-btn bottom-anchored hidden">Continue</button>
+        </main>
+
+        <!-- Results Screen -->
+        <main id="result-container" class="view-screen hidden text-center">
+            <div class="spacer"></div>
+            <h2 id="result-message" class="result-title">Complete.</h2>
+            <div class="score-display">
+                <span id="score">0</span><span class="score-total">/10</span>
+            </div>
+            <div class="spacer"></div>
+            <button id="restart-btn" class="primary-btn 3d-btn bottom-anchored">Done</button>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
