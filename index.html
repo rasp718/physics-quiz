@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Universal Quiz</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 id="main-title">Quizzer.</h1>
+            <!-- NEW: Theme Toggle Button -->
+            <button id="theme-toggle" aria-label="Toggle Theme">☀️</button>
+        </header>
+        
+        <!-- Setup -->
+        <div id="setup-container" class="card">
+            <h2>Select a Subject</h2>
+            <p class="subtitle">Upload a question bank to begin.</p>
+            <div class="upload-section">
+                <input type="file" id="file-input" accept=".json">
+            </div>
+            <button id="start-btn" class="primary-btn">Start 10 Questions</button>
+        </div>
+
+        <!-- Quiz -->
+        <div id="quiz-container" class="card hidden">
+            <div class="quiz-header">
+                <div class="progress-bar-container"><div id="progress-bar"></div></div>
+                <div class="stats-row">
+                    <span id="progress-text">0 / 10</span>
+                    <span id="streak-display" class="hidden">🔥 <span id="streak-count">0</span></span>
+                </div>
+            </div>
+            
+            <h2 id="question-text">Loading...</h2>
+            <div id="options-container"></div>
+
+            <div id="explanation-container" class="explanation-box hidden">
+                <div class="explainer-header">Explanation</div>
+                <p id="explanation-text"></p>
+                <img id="explanation-image" src="" alt="Diagram" class="hidden">
+            </div>
+
+            <button id="next-btn" class="primary-btn hidden">Next Question →</button>
+        </div>
+
+        <!-- Results -->
+        <div id="result-container" class="card hidden">
+            <h2 id="result-message">Complete.</h2>
+            <div class="score-display"><span id="score">0</span><small>/10</small></div>
+            <button id="restart-btn" class="primary-btn">Take Another Quiz</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
