@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedImage Physics Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-blobs"></div>
+    
+    <div class="container">
+        <header>
+            <h1>PHYS 2603</h1>
+            <p>Medical Imaging Principles</p>
+        </header>
+        
+        <div id="setup-container" class="card">
+            <h2>Ready to Practice?</h2>
+            <p>Test your knowledge on Ultrasound, X-Rays, and MRI.</p>
+            <div class="upload-section">
+                <label for="file-input">Load Custom Quiz (JSON)</label>
+                <input type="file" id="file-input" accept=".json">
+            </div>
+            <button id="start-btn" class="primary-btn">Start 10-Question Quiz</button>
+        </div>
+
+        <div id="quiz-container" class="card hidden">
+            <div class="quiz-header">
+                <div class="progress-bar-container">
+                    <div id="progress-bar"></div>
+                </div>
+                <div id="progress-text">Question 1 of 10</div>
+            </div>
+            
+            <h2 id="question-text">Question Text</h2>
+            
+            <div id="options-container"></div>
+
+            <div id="explanation-container" class="explanation-box hidden">
+                <div class="explainer-header">Learning Point:</div>
+                <p id="explanation-text"></p>
+            </div>
+
+            <button id="next-btn" class="primary-btn hidden">Next Question →</button>
+        </div>
+
+        <div id="result-container" class="card hidden">
+            <div class="result-icon">🎓</div>
+            <h2>Quiz Complete!</h2>
+            <div class="score-display">
+                <span id="score">0</span><small>/10</small>
+            </div>
+            <button id="restart-btn" class="primary-btn">Try Again</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
