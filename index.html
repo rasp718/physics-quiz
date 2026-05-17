@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MedImage Physics Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-blobs"></div>
+    <div class="container">
+        <header>
+            <h1>PHYS 2603</h1>
+            <p>Medical Imaging Review</p>
+        </header>
+        
+        <!-- Setup -->
+        <div id="setup-container" class="card">
+            <h2 style="margin-bottom:0.5rem">Practice Quiz</h2>
+            <p style="font-size:0.9rem; margin-bottom:1rem">Review Ultrasound, X-Ray, and MRI principles.</p>
+            <div class="upload-section">
+                <input type="file" id="file-input" accept=".json" style="font-size:0.7rem">
+            </div>
+            <button id="start-btn" class="primary-btn">Start 10 Questions</button>
+        </div>
+
+        <!-- Quiz -->
+        <div id="quiz-container" class="card hidden">
+            <div class="quiz-header">
+                <div class="progress-bar-container"><div id="progress-bar"></div></div>
+                <div id="progress-text">Q1 of 10</div>
+            </div>
+            
+            <h2 id="question-text">Question Loading...</h2>
+            <div id="options-container"></div>
+
+            <div id="explanation-container" class="explanation-box hidden">
+                <div class="explainer-header">Learning Point:</div>
+                <p id="explanation-text"></p>
+            </div>
+
+            <button id="next-btn" class="primary-btn hidden">Next Question →</button>
+        </div>
+
+        <!-- Results -->
+        <div id="result-container" class="card hidden">
+            <div class="result-icon">🎯</div>
+            <h2>Finished!</h2>
+            <div class="score-display"><span id="score">0</span><small>/10</small></div>
+            <button id="restart-btn" class="primary-btn">Try Again</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
